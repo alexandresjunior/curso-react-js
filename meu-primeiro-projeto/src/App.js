@@ -1,12 +1,12 @@
 import Cabecalho from "./componentes/Cabecalho";
-import Conteudo from "./componentes/Conteudo";
 import Rodape from "./componentes/Rodape";
+import Cursos from "./paginas/Cursos";
 
 const App = () => {
   return (
     <>
       <Cabecalho />
-      <Conteudo />
+      <Cursos />
       <Rodape />
     </>
   );

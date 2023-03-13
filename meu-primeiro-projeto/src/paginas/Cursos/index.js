@@ -1,7 +1,7 @@
-import { cursos } from "../mocks/cursos";
-import CursoCard from "./CursoCard";
+import CursoCard from "../../componentes/CursoCard";
+import { cursos } from "../../mocks/cursos";
 
-const Conteudo = () => {
+const Cursos = () => {
     return (
         <div className="container text-center my-5">
             <div className="row">
@@ -24,4 +24,4 @@ const Conteudo = () => {
     )
 }
 
-export default Conteudo;
+export default Cursos;
