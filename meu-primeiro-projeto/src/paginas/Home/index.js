@@ -1,6 +1,20 @@
+import { useLocation } from "react-router-dom";
+
 const Home = () => {
+    const location = useLocation()
+
+    const nome = location.state?.nome
+
     return (
-        <div>Home</div>
+        <>
+            {
+                !!nome ? (
+                    <div>Olá, {nome}</div>
+                ) : (
+                    <div>Olá!</div>
+                )
+            }
+        </>
     )
 }
 

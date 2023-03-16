@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { TemaContext } from "../contexts/TemaContext";
+
 const Rodape = () => {
+    const { tema } = useContext(TemaContext)
+
     return (
-        <div className="container-fluid bg-dark" data-bs-theme="dark">
+        <div className={`container-fluid bg-${tema}`} data-bs-theme={tema}>
             <footer className="p-5">
                 <div className="row">
                     <div className="col-6 col-md-2 mb-3">
