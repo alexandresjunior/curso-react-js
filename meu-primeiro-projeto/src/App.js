@@ -9,18 +9,20 @@ import Login from "./paginas/Login";
 
 const App = () => {
   return (
-    <TemaProvider>
-      <BrowserRouter>
-        <Cabecalho />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cursos" element={<Cursos />} />
-          <Route path="/consultoria" element={<Consultoria />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <Rodape />
-      </BrowserRouter>
-    </TemaProvider>
+    <>
+      <TemaProvider>
+        <BrowserRouter>
+          <Cabecalho />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cursos" element={<Cursos />} />
+            <Route path="/consultoria" element={<Consultoria />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+          <Rodape />
+        </BrowserRouter>
+      </TemaProvider>
+    </>
   );
 }
 
