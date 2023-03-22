@@ -3,6 +3,7 @@ import Home from "./paginas/Home";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Login from "./paginas/Login";
+import Cadastro from "./paginas/Cadastro";
 
 const App = () => {
   return (
@@ -15,8 +16,8 @@ const App = () => {
           <Route path="detalhes/:id" element={<Home novo={false} />} />
           <Route path="nova-barragem" element={<Home novo={true} />} />
         </Route>
-        <Route path="/acesso" element={<Login />} />
-        <Route path="/cadastro" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/recuperar-senha" element={<Home />} />
       </Routes>
       <Footer />

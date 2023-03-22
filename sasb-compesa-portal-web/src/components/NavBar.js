@@ -32,7 +32,7 @@ const NavBar = () => {
         </div>
 
         <div className="col-lg-2 col-md-12">
-          <Link to={"/acesso"}>
+          <Link to={"/login"}>
             <button className="btn btn-lg btn-sasb-blue sasb-shadow">
               ÁREA DO COLABORADOR
             </button>
