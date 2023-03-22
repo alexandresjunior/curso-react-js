@@ -45,6 +45,23 @@ html * {
     transition: 0.25s;
 }
 
+.btn.btn-sasb-green {
+	background-color: #8DC63F;
+	color: white;
+    font-weight: 600;
+	font-size: 14px;
+}
+
+.btn.btn-sasb-green:hover {
+	background-color: white;
+	color: #223F99;
+    transition: 0.25s;
+}
+
+.container-full {
+    height: 100vh;
+}
+
 .footer-blue {
     background-color: #223F99;
     min-height: 50px;
@@ -69,4 +86,25 @@ html * {
 .marker-text {
     font-size: 14px;
     font-weight: 600;
+}
+
+.form-registration {
+	border-radius: 10px;
+    background-color: #223F99;
+    color: white;
+    font-weight: 600;
+}
+
+.form-label {
+    color: #8DC63F;
+}
+
+.form-link {
+	color: white;
+	text-decoration: none;
+}
+
+.form-link:hover {
+	color: rgba(141, 198, 63, 1);
+    transition: 0.25s;
 }
