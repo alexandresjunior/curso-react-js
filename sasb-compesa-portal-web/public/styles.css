@@ -12,6 +12,39 @@ html * {
     min-height: 50px;
 }
 
+.sasb-shadow {
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.6);
+}
+
+.sasb-navbar {
+    position: absolute;
+    z-index: 1;
+}
+
+.sasb-logo-navbar {
+    max-width: 300px;
+}
+
+.btn.btn-sasb-blue {
+    background-color: #223F99;
+    border-width: 1;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding-inline: 25px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn.btn-sasb-blue:hover {
+    background-color: #8DC63F;
+    color: #223F99;
+    transition: 0.25s;
+}
+
 .footer-blue {
     background-color: #223F99;
     min-height: 50px;
@@ -24,7 +57,7 @@ html * {
 
 .google-map {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
 }
 
 .marker {
