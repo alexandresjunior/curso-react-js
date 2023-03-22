@@ -19,15 +19,13 @@ const NavBar = () => {
 
         <div className="col-lg-2 col-md-12">
           <DropdownFilter
-            selected={"Filtrar por categoria de risco"}
-            options={["Baixo", "Médio", "Alto"]}
+            options={["Filtrar por categoria de risco", "Baixo", "Médio", "Alto"]}
           />
         </div>
 
         <div className="col-lg-2 col-md-12">
           <DropdownFilter
-            selected={"Filtrar por dano potencial"}
-            options={["Baixo", "Médio", "Alto"]}
+            options={["Filtrar por dano potencial", "Baixo", "Médio", "Alto"]}
           />
         </div>
 

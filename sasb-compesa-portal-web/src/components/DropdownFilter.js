@@ -1,10 +1,9 @@
-const DropdownFilter = ({ selected, options }) => {
+const DropdownFilter = ({ options }) => {
   return (
     <div className="input-group mb-3 sasb-shadow">
       <select className="form-select">
-        <option selected>{selected}</option>
         {options?.map((option, index) => {
-          return <option value={index}>{option}</option>;
+          return <option value={index} key={index}>{option}</option>;
         })}
       </select>
     </div>

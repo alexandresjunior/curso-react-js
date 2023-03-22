@@ -1,6 +1,6 @@
 const SearchBar = () => {
   return (
-    <div class="input-group rounded mb-3">
+    <div className="input-group rounded mb-3">
       <input
         type="text"
         className="form-control"
