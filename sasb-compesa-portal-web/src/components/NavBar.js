@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/sasb_compesa_logo.png";
 import DropdownFilter from "./DropdownFilter";
 import SearchBar from "./SearchBar";
@@ -31,9 +32,11 @@ const NavBar = () => {
         </div>
 
         <div className="col-lg-2 col-md-12">
-          <button className="btn btn-lg btn-sasb-blue sasb-shadow">
-            ÁREA DO COLABORADOR
-          </button>
+          <Link to={"/acesso"}>
+            <button className="btn btn-lg btn-sasb-blue sasb-shadow">
+              ÁREA DO COLABORADOR
+            </button>
+          </Link>
         </div>
       </div>
     </div>

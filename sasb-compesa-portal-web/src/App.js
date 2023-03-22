@@ -1,16 +1,25 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./paginas/Home";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import NavBar from "./components/NavBar";
-import Mapa from "./paginas/Mapa";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <NavBar />
-      <Mapa />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/barragem">
+          <Route index element={<Home />} />
+          <Route path="detalhes/:id" element={<Home novo={false} />} />
+          <Route path="nova-barragem" element={<Home novo={true} />} />
+        </Route>
+        <Route path="/acesso" element={<Home />} />
+        <Route path="/cadastro" element={<Home />} />
+        <Route path="/recuperar-senha" element={<Home />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 
