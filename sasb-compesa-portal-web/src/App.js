@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Login from "./paginas/Login";
 import Cadastro from "./paginas/Cadastro";
 import RecuperarSenha from "./paginas/RecuperarSenha";
+import Barragem from "./paginas/Barragem";
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/barragem">
-          <Route index element={<Home />} />
+          <Route index element={<Barragem />} />
           <Route path="detalhes/:id" element={<Home novo={false} />} />
           <Route path="nova-barragem" element={<Home novo={true} />} />
         </Route>

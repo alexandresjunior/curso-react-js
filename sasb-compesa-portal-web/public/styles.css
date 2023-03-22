@@ -45,6 +45,44 @@ html * {
     transition: 0.25s;
 }
 
+.btn.btn-sasb-blue-outline {
+    background-color: white;
+    border-color: #223F99;
+    color: #223F99;
+    font-weight: bold;
+    text-decoration: none;
+    padding-inline: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border-width: 1;
+    border-radius: 5px;
+}
+
+.btn.btn-sasb-blue-outline:hover {
+    background-color: #223F99;
+    color: white;
+    transition: 0.25s;
+}
+
+.btn.btn-sasb-red-outline {
+    background-color: white;
+    border-width: 1;
+    border-color: #992020;
+    color: #992020;
+    font-weight: bold;
+    text-decoration: none;
+    padding-inline: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn.btn-sasb-red-outline:hover {
+    background-color: #992020;
+    color: white;
+    transition: 0.25s;
+}
+
 .btn.btn-sasb-green {
 	background-color: #8DC63F;
 	color: white;
