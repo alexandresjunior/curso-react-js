@@ -21,3 +21,19 @@ html * {
     font-size: 14px;
     font-weight: 700;
 }
+
+.google-map {
+    width: 100%;
+    height: 80vh;
+}
+
+.marker {
+    display: flex;
+    align-items: center;
+    width: 180px;
+}
+
+.marker-text {
+    font-size: 14px;
+    font-weight: 600;
+}
