@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("./fonts/Raleway/static/Raleway-Regular.ttf")
+}
+
+html * {
+    font-family: 'Raleway' !important;
+}
+
+.header-blue {
+    background-color: #223F99;
+    min-height: 50px;
+}
+
+.footer-blue {
+    background-color: #223F99;
+    min-height: 50px;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    font-weight: 700;
+}
