@@ -116,7 +116,7 @@ const Cadastro = () => {
           <div className="text-center mt-5 mb-5">
             <span className="text-white">
               Já possui uma conta?{" "}
-              <Link className="form-link" to="/sign-in">
+              <Link className="form-link" to="/login">
                 Acesse aqui.
               </Link>
             </span>
