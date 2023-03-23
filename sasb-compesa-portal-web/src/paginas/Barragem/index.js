@@ -13,7 +13,7 @@ import PlanoSegurancaCard from "./components/PlanoSegurancaCard";
 import PlanoAcaoEmergencialCard from "./components/PlanoAcaoEmergencial";
 import InspecoesCard from "./components/InspecoesCard";
 
-const Barragem = () => {
+const Barragem = () => {  
   return (
     <>
       <NavBarRelative />

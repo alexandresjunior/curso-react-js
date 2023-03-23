@@ -7,6 +7,11 @@ html * {
     font-family: 'Raleway' !important;
 }
 
+.bg-blue {
+    background-color: #223F99;
+    color: white;
+}
+
 .header-blue {
     background-color: #223F99;
     min-height: 50px;
@@ -84,21 +89,48 @@ html * {
 }
 
 .btn.btn-sasb-green {
-	background-color: #8DC63F;
-	color: white;
+    background-color: #8DC63F;
+    color: white;
     font-weight: 600;
-	font-size: 14px;
+    font-size: 14px;
 }
 
 .btn.btn-sasb-green:hover {
-	background-color: white;
-	color: #223F99;
+    background-color: white;
+    color: #223F99;
+    transition: 0.25s;
+}
+
+.btn.btn-sasb-green-dark {
+    background-color: #8DC63F;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn.btn-sasb-green-dark:hover {
+    background-color: #7eae3a;
+    color: white;
+    transition: 0.25s;
+}
+
+.btn.btn-sasb-white-dark {
+    background-color: white;
+    color: #8DC63F;
+    border-color: #8DC63F;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn.btn-sasb-white-dark:hover {
+    background-color: rgb(220, 220, 220);
+    color: #223F99;
     transition: 0.25s;
 }
 
 .card.card-blue {
     background-color: #C6DDFF;
-	color: #000;
+    color: #000;
 }
 
 .container-full {
@@ -138,7 +170,7 @@ html * {
 }
 
 .form-registration {
-	border-radius: 10px;
+    border-radius: 10px;
     background-color: #223F99;
     color: white;
     font-weight: 600;
@@ -149,12 +181,12 @@ html * {
 }
 
 .form-link {
-	color: white;
-	text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .form-link:hover {
-	color: rgba(141, 198, 63, 1);
+    color: rgba(141, 198, 63, 1);
     transition: 0.25s;
 }
 
