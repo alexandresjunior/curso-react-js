@@ -93,7 +93,7 @@ const InspecoesCard = () => {
         </h5>
 
         {editMode && (
-          <button className="btn btn-sm btn-sasb-blue mb-3" onClick={() => {}}>
+          <button className="btn btn-sasb-blue-sm mb-3" onClick={() => {}}>
             NOVA INSPEÇÃO
           </button>
         )}
@@ -103,7 +103,7 @@ const InspecoesCard = () => {
             return editMode ? (
               <div class="container border border-secondary rounded mb-3 p-2">
                 <small className="fw-bold">Nome:</small>
-                <div class="input-group input-group-sm mt-2 mb-3">
+                <div class="input-group input-group-sm mt-2 mb-2">
                   <input
                     type="text"
                     class="form-control"
@@ -114,7 +114,7 @@ const InspecoesCard = () => {
                 </div>
 
                 <small className="fw-bold">Data:</small>
-                <div class="input-group input-group-sm mt-2 mb-3">
+                <div class="input-group input-group-sm mt-2 mb-2">
                   <input
                     type="date"
                     class="form-control"
@@ -125,7 +125,7 @@ const InspecoesCard = () => {
                 </div>
 
                 <small className="fw-bold">Link para o arquivo:</small>
-                <div class="input-group input-group-sm mt-2 mb-3">
+                <div class="input-group input-group-sm mt-2 mb-2">
                   <input
                     type="text"
                     class="form-control"
@@ -137,7 +137,7 @@ const InspecoesCard = () => {
 
                 <div className="d-flex justify-content-end">
                   <button
-                    className="btn btn-sm btn-sasb-blue-sm my-2"
+                    className="btn btn-sasb-red-sm my-2"
                     data-bs-toggle="modal"
                     data-bs-target="#alertModal"
                     onClick={() => {}}
