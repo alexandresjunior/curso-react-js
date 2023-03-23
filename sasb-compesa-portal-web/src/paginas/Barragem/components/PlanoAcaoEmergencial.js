@@ -46,7 +46,10 @@ const PlanoAcaoEmergencialCard = () => {
         </p>
         <section>
           <div className="card-text">
-            <b>Status: </b>EM ELABORAÇÃO
+            <b>
+              Status:{" "}
+              <span className="text-warning-emphasis">EM ELABORAÇÃO</span>
+            </b>
           </div>
           <div className="card-text">
             <b>Data de Entrega: </b>dd/MM/aaaa

@@ -47,7 +47,9 @@ const InspecoesCard = () => {
             <b>Frequência: </b>Anual
           </div>
           <div className="card-text">
-            <b>Status: </b>Pendente
+            <b>
+              Status: <span className="text-danger">PENDENTE</span>
+            </b>
           </div>
         </section>
 

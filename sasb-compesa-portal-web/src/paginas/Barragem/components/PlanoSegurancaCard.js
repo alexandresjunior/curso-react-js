@@ -46,7 +46,9 @@ const PlanoSegurancaCard = () => {
         </p>
         <section>
           <div className="card-text">
-            <b>Status: </b>ENTREGUE
+            <b>
+              Status: <span className="text-success-emphasis">ENTREGUE</span>
+            </b>
           </div>
           <div className="card-text">
             <b>Data de Entrega: </b>dd/MM/aaaa
