@@ -38,31 +38,135 @@ const DetalhesTecnicosCard = () => {
         </div>
 
         <div className="card-text mb-2">
-          <b>Material: </b>Barragem de Concreto
+          <b>Material: </b>
+          {editMode ? (
+            <div class="input-group input-group-sm mt-2 mb-3">
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                defaultValue={"Barragem de Concreto"}
+              />
+            </div>
+          ) : (
+            <>Barragem de Concreto</>
+          )}
         </div>
         <section className="mb-2">
           <div className="card-text">
-            <b>Capacidade: </b>0000.0 m³
+            <b>Capacidade: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"0000.0"}
+                />
+              </div>
+            ) : (
+              <>0000.0 m³</>
+            )}
           </div>
           <div className="card-text">
-            <b>Altura: </b>000.0m
+            <b>Altura: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"000.0"}
+                />
+              </div>
+            ) : (
+              <>000.0 m</>
+            )}
           </div>
           <div className="card-text">
-            <b>Comprimento: </b>0000.0m
+            <b>Comprimento: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"0000.0"}
+                />
+              </div>
+            ) : (
+              <>0000.0 m</>
+            )}
           </div>
         </section>
         <section>
           <div className="card-text">
-            <b>Bacia Hidrográfica: </b>A Definir
+            <b>Bacia Hidrográfica: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"A Definir"}
+                />
+              </div>
+            ) : (
+              <>A Definir</>
+            )}
           </div>
           <div className="card-text">
-            <b>Área Bacia Hidrográfica: </b>000.0m²
+            <b>Área Bacia Hidrográfica: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"000.0"}
+                />
+              </div>
+            ) : (
+              <>000.0m²</>
+            )}
           </div>
           <div className="card-text">
-            <b>Área Bacia Hidráulica: </b>000.0m²
+            <b>Área Bacia Hidráulica: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"000.0"}
+                />
+              </div>
+            ) : (
+              <>000.0m²</>
+            )}
           </div>
           <div className="card-text">
-            <b>Área Inundada: </b>000.0m²
+            <b>Área Inundada: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"000.0"}
+                />
+              </div>
+            ) : (
+              <>000.0m²</>
+            )}
           </div>
         </section>
       </div>

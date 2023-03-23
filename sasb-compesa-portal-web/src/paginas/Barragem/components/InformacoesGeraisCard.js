@@ -39,28 +39,121 @@ const InformacoesGeraisCard = () => {
         </div>
 
         <div className="card-text mb-2">
-          <b>Nome da barragem: </b>Tapacurá
+          <b>Nome da barragem: </b>
+          {editMode ? (
+            <div class="input-group input-group-sm mt-2 mb-3">
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                defaultValue={"Tapacurá"}
+              />
+            </div>
+          ) : (
+            <>Tapacurá</>
+          )}
         </div>
+
         <section className="mb-2">
           <div className="card-text">
-            <b>Localização: </b>São Lourenço da Mata - PE
+            <b>Localização: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"São Lourenço da Mata - PE"}
+                />
+              </div>
+            ) : (
+              <>São Lourenço da Mata - PE</>
+            )}
           </div>
+
           <div className="card-text">
-            <b>Ano de Construção: </b>1970
+            <b>Ano de Construção: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"1970"}
+                />
+              </div>
+            ) : (
+              <>1970</>
+            )}
           </div>
         </section>
         <section>
           <div className="card-text">
-            <b>Diretoria: </b>DRI
+            <b>Diretoria: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"DRI"}
+                />
+              </div>
+            ) : (
+              <>DRI</>
+            )}
           </div>
           <div className="card-text">
-            <b>Gerência: </b>Agreste
+            <b>Gerência: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"Agreste"}
+                />
+              </div>
+            ) : (
+              <>Agreste</>
+            )}
           </div>
           <div className="card-text">
-            <b>Coordenação: </b>GPR Sertão
+            <b>Coordenação: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"GPR Sertão"}
+                />
+              </div>
+            ) : (
+              <>GPR Sertão</>
+            )}
           </div>
           <div className="card-text">
-            <b>Titularidade: </b>COMPESA
+            <b>Titularidade: </b>
+            {editMode ? (
+              <div class="input-group input-group-sm mt-2 mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  defaultValue={"GPR Sertão"}
+                />
+              </div>
+            ) : (
+              <>COMPESA</>
+            )}
           </div>
         </section>
       </div>
