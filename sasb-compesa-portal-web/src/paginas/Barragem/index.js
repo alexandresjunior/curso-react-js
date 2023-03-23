@@ -12,18 +12,41 @@ import DetalhesTecnicosCard from "./components/DetalhesTecnicosCard";
 import PlanoSegurancaCard from "./components/PlanoSegurancaCard";
 import PlanoAcaoEmergencialCard from "./components/PlanoAcaoEmergencial";
 import InspecoesCard from "./components/InspecoesCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { TfiSave } from "react-icons/tfi";
 import { ImCancelCircle } from "react-icons/im";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 const Barragem = () => {
+  const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
   return (
     <>
       <NavBarRelative />
-      {editMode ? (
+      {!editMode ? (
+        <div>
+          {!isSignedIn ? (
+            <></>
+          ) : (
+            <div className="d-flex justify-content-end">
+              <button
+                className="no-style-button no-style-button-absolute"
+                onClick={() => setEditMode(true)}
+              >
+                <FiEdit size={20} />
+              </button>
+            </div>
+          )}
+
+          <Carousel
+            target={"carrosselHomepage"}
+            images={images}
+            slideStyle={"fade"}
+          />
+        </div>
+      ) : (
         <div className="container">
           <div className="d-flex justify-content-end m-4">
             <button className="no-style-button" onClick={() => {}}>
@@ -41,10 +64,10 @@ const Barragem = () => {
             return (
               <>
                 <b>{`Link para a imagem ${index + 1}:`}</b>
-                <div class="input-group input-group-sm mt-2 mb-3">
+                <div className="input-group input-group-sm mt-2 mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={image.link}
@@ -64,30 +87,10 @@ const Barragem = () => {
             );
           })}
           <div className="d-flex justify-content-end">
-            <button
-              className="btn btn-sasb-blue px-3 my-3"
-              onClick={() => {}}
-            >
+            <button className="btn btn-sasb-blue px-3 my-3" onClick={() => {}}>
               NOVA IMAGEM
             </button>
           </div>
-        </div>
-      ) : (
-        <div>
-          <div className="d-flex justify-content-end">
-            <button
-              className="no-style-button no-style-button-absolute"
-              onClick={() => setEditMode(true)}
-            >
-              <FiEdit size={20} />
-            </button>
-          </div>
-
-          <Carousel
-            target={"carrosselHomepage"}
-            images={images}
-            slideStyle={"fade"}
-          />
         </div>
       )}
 

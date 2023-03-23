@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { TfiSave } from "react-icons/tfi";
 import icon from "../../../assets/pdf_download.png";
+import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const InspecoesCard = () => {
+  const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -15,7 +17,9 @@ const InspecoesCard = () => {
             <b>Inspeções</b>
           </h5>
 
-          {!editMode ? (
+          {!isSignedIn ? (
+            <></>
+          ) : !editMode ? (
             <div>
               <button
                 className="no-style-button"
@@ -43,10 +47,10 @@ const InspecoesCard = () => {
           <div className="card-text">
             <b>Prioridade: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"2"}
@@ -59,10 +63,10 @@ const InspecoesCard = () => {
           <div className="card-text">
             <b>Frequência: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"Anual"}
@@ -75,8 +79,8 @@ const InspecoesCard = () => {
           <div className="card-text">
             <b>Status: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
-                <select class="form-select" aria-label="Default select example">
+              <div className="input-group input-group-sm mt-2 mb-3">
+                <select className="form-select" aria-label="Default select example">
                   <option value="0">Selecione o status</option>
                   <option value="1">EM DIA</option>
                   <option value="2">PENDENTE</option>
@@ -98,15 +102,15 @@ const InspecoesCard = () => {
           </button>
         )}
 
-        <div class="scrollable">
+        <div className="scrollable">
           {inspecoes?.map((inspecao, index) => {
             return editMode ? (
-              <div class="container border border-secondary rounded mb-3 p-2">
+              <div className="container border border-secondary rounded mb-3 p-2">
                 <small className="fw-bold">Nome:</small>
-                <div class="input-group input-group-sm mt-2 mb-2">
+                <div className="input-group input-group-sm mt-2 mb-2">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={inspecao.nome}
@@ -114,10 +118,10 @@ const InspecoesCard = () => {
                 </div>
 
                 <small className="fw-bold">Data:</small>
-                <div class="input-group input-group-sm mt-2 mb-2">
+                <div className="input-group input-group-sm mt-2 mb-2">
                   <input
                     type="date"
-                    class="form-control"
+                    className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={inspecao.data}
@@ -125,10 +129,10 @@ const InspecoesCard = () => {
                 </div>
 
                 <small className="fw-bold">Link para o arquivo:</small>
-                <div class="input-group input-group-sm mt-2 mb-2">
+                <div className="input-group input-group-sm mt-2 mb-2">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={inspecao.link}
@@ -174,10 +178,10 @@ const InspecoesCard = () => {
         {editMode ? (
           <div className="card-text mt-2">
             <b>Link para os documentos: </b>
-            <div class="input-group input-group-sm mt-2 mb-3">
+            <div className="input-group input-group-sm mt-2 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
                 defaultValue={"http://link-para-os-documentos.pdf"}

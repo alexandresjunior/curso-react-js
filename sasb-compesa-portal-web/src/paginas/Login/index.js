@@ -59,7 +59,7 @@ const Login = () => {
 
           <div className="row justify-content-center text-center">
             <div className="col-lg-8 col-md-8 col-sm-10 col-10">
-              <span className="form-label auth-error">{error}</span>
+              <span className="form-error">{error}</span>
             </div>
           </div>
 

@@ -181,6 +181,12 @@ html * {
     height: 100vh;
 }
 
+.form-error {
+    color: #e46e6e;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .footer-blue {
     background-color: #223F99;
     min-height: 50px;

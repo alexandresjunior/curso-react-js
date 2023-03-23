@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { TfiSave } from "react-icons/tfi";
+import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const DetalhesTecnicosCard = () => {
+  const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -13,7 +15,10 @@ const DetalhesTecnicosCard = () => {
           <h5 className="card-title mb-3">
             <b>Detalhes Técnicos</b>
           </h5>
-          {!editMode ? (
+
+          {!isSignedIn ? (
+            <></>
+          ) : !editMode ? (
             <div>
               <button
                 className="no-style-button"
@@ -40,10 +45,10 @@ const DetalhesTecnicosCard = () => {
         <div className="card-text mb-2">
           <b>Material: </b>
           {editMode ? (
-            <div class="input-group input-group-sm mt-2 mb-3">
+            <div className="input-group input-group-sm mt-2 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
                 defaultValue={"Barragem de Concreto"}
@@ -57,10 +62,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Capacidade: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"0000.0"}
@@ -73,10 +78,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Altura: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"000.0"}
@@ -89,10 +94,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Comprimento: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"0000.0"}
@@ -107,10 +112,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Bacia Hidrográfica: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"A Definir"}
@@ -123,10 +128,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Área Bacia Hidrográfica: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"000.0"}
@@ -139,10 +144,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Área Bacia Hidráulica: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"000.0"}
@@ -155,10 +160,10 @@ const DetalhesTecnicosCard = () => {
           <div className="card-text">
             <b>Área Inundada: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"000.0"}

@@ -1,9 +1,11 @@
 import { FiEdit } from "react-icons/fi";
 import { TfiSave } from "react-icons/tfi";
 import { ImCancelCircle } from "react-icons/im";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const InformacoesGeraisCard = () => {
+  const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -14,7 +16,9 @@ const InformacoesGeraisCard = () => {
             <b>Informações Gerais</b>
           </h5>
 
-          {!editMode ? (
+          {!isSignedIn ? (
+            <></>
+          ) : !editMode ? (
             <div>
               <button
                 className="no-style-button"

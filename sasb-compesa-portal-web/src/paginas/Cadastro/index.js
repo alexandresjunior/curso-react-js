@@ -14,7 +14,7 @@ const Cadastro = () => {
       setError("Preencha todos os campos");
       return;
     } else if (senha !== senhaConf) {
-      setError("As senhas devem ser iguais!");
+      setError("As senhas devem ser iguais");
       return;
     }
   };
@@ -97,7 +97,7 @@ const Cadastro = () => {
 
           <div className="row justify-content-center text-center">
             <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-              <span className="form-label auth-error">{error}</span>
+              <span className="form-error">{error}</span>
             </div>
           </div>
 

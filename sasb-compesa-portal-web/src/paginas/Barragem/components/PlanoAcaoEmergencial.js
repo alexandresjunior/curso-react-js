@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { ImCancelCircle } from "react-icons/im";
 import { TfiSave } from "react-icons/tfi";
+import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const PlanoAcaoEmergencialCard = () => {
+  const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -14,7 +16,9 @@ const PlanoAcaoEmergencialCard = () => {
             <b>Plano de Ação Emergencial</b>
           </h5>
 
-          {!editMode ? (
+          {!isSignedIn ? (
+            <></>
+          ) : !editMode ? (
             <div>
               <button
                 className="no-style-button"
@@ -48,8 +52,8 @@ const PlanoAcaoEmergencialCard = () => {
           <div className="card-text">
             <b>Status: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
-                <select class="form-select" aria-label="Default select example">
+              <div className="input-group input-group-sm mt-2 mb-3">
+                <select className="form-select" aria-label="Default select example">
                   <option value="0">Selecione o status</option>
                   <option value="1">A FAZER</option>
                   <option value="2">EM ELABORAÇÃO</option>
@@ -65,10 +69,10 @@ const PlanoAcaoEmergencialCard = () => {
           <div className="card-text">
             <b>Data de Entrega: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="date"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"dd/MM/aaaa"}
@@ -83,10 +87,10 @@ const PlanoAcaoEmergencialCard = () => {
         {editMode ? (
           <div className="card-text">
             <b>Link para o documento: </b>
-            <div class="input-group input-group-sm mt-2 mb-3">
+            <div className="input-group input-group-sm mt-2 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
                 defaultValue={"http://link-para-o-documento.pdf"}
