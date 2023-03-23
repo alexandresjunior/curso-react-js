@@ -146,3 +146,18 @@ html * {
 	color: rgba(141, 198, 63, 1);
     transition: 0.25s;
 }
+
+.search-bar {
+    cursor: pointer;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.search-bar-input {
+    border: none;
+    outline: 0;
+}
