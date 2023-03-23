@@ -41,10 +41,10 @@ const InformacoesGeraisCard = () => {
         <div className="card-text mb-2">
           <b>Nome da barragem: </b>
           {editMode ? (
-            <div class="input-group input-group-sm mt-2 mb-3">
+            <div className="input-group input-group-sm mt-2 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
                 defaultValue={"Tapacurá"}
@@ -59,10 +59,10 @@ const InformacoesGeraisCard = () => {
           <div className="card-text">
             <b>Localização: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"São Lourenço da Mata - PE"}
@@ -76,10 +76,10 @@ const InformacoesGeraisCard = () => {
           <div className="card-text">
             <b>Ano de Construção: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"1970"}
@@ -94,10 +94,10 @@ const InformacoesGeraisCard = () => {
           <div className="card-text">
             <b>Diretoria: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"DRI"}
@@ -110,10 +110,10 @@ const InformacoesGeraisCard = () => {
           <div className="card-text">
             <b>Gerência: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"Agreste"}
@@ -126,10 +126,10 @@ const InformacoesGeraisCard = () => {
           <div className="card-text">
             <b>Coordenação: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"GPR Sertão"}
@@ -142,10 +142,10 @@ const InformacoesGeraisCard = () => {
           <div className="card-text">
             <b>Titularidade: </b>
             {editMode ? (
-              <div class="input-group input-group-sm mt-2 mb-3">
+              <div className="input-group input-group-sm mt-2 mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   defaultValue={"GPR Sertão"}

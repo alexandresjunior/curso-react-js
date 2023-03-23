@@ -12,7 +12,7 @@ const AlertModal = () => {
           <div class="modal-body bg-blue px-5">
             <p className="text-center fw-bolder mt-3 mb-4">ATENÇÃO</p>
             <p className="text-center fw-bold mb-4">
-              Você está prestes a excluir uma barragem do banco de dados. Deseja
+              Esta ação irá excluir um registro do banco de dados. Deseja
               prosseguir?
             </p>
             <div className="row d-flex justify-content-center mb-4">

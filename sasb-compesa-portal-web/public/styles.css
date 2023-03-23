@@ -50,6 +50,23 @@ html * {
     transition: 0.25s;
 }
 
+.btn.btn-sasb-blue-sm {
+    background-color: #223F99;
+    border-width: 1;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn.btn-sasb-blue-sm:hover {
+    background-color: #992020;
+    color: white;
+    transition: 0.25s;
+}
+
 .btn.btn-sasb-blue-outline {
     background-color: white;
     border-color: #223F99;
@@ -134,7 +151,7 @@ html * {
 }
 
 .card.card-blue.card-scrollable {
-    height: 560px;
+    min-height: 560px;
 }
 
 .scrollable {
