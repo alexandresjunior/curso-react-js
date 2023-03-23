@@ -8,7 +8,7 @@ const InspecoesCard = () => {
   const [editMode, setEditMode] = useState(false);
 
   return (
-    <div className="card card-blue mb-4">
+    <div className="card card-blue card-scrollable mb-4">
       <div className="card-body">
         <div className="d-flex justify-content-between">
           <h5 className="card-title mb-3">
@@ -54,31 +54,32 @@ const InspecoesCard = () => {
         <h5 className="card-title mt-3 mb-3">
           <b>Relatórios de Inspeções Realizadas</b>
         </h5>
-
-        {inspecoes?.map((inspecao, index) => {
-          return (
-            <div className="row mb-3" key={index}>
-              <div className="col-2">
-                <a href={inspecao.link}>
-                  <img
-                    src={icon}
-                    alt="Baixar relatório de inspeção"
-                    width={"50px"}
-                  />
-                </a>
-              </div>
-              <div className="col-10">
-                <div className="card-text">
-                  <b>{inspecao.nome}</b>
+        <div class="scrollable">
+          {inspecoes?.map((inspecao, index) => {
+            return (
+              <div className="row mb-3" key={index}>
+                <div className="col-2">
+                  <a href={inspecao.link}>
+                    <img
+                      src={icon}
+                      alt="Baixar relatório de inspeção"
+                      width={"50px"}
+                    />
+                  </a>
                 </div>
-                <div className="card-text">
-                  <b>Data: </b>
-                  {inspecao.data}
+                <div className="col-10">
+                  <div className="card-text">
+                    <b>{inspecao.nome}</b>
+                  </div>
+                  <div className="card-text">
+                    <b>Data: </b>
+                    {inspecao.data}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
 
         <button className="btn btn-lg btn-sasb-blue mt-3 w-100">
           BAIXAR TODOS OS RELATÓRIOS
