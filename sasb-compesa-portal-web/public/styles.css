@@ -221,11 +221,13 @@ html * {
     display: flex;
     align-items: center;
     width: 180px;
+    cursor: pointer;
 }
 
 .marker-text {
     font-size: 14px;
     font-weight: 600;
+    color: white;
 }
 
 .form-registration {
