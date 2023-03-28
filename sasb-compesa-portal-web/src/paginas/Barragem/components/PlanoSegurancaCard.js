@@ -4,7 +4,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { TfiSave } from "react-icons/tfi";
 import { GlobalContext } from "../../../contexts/GlobalContext";
 
-const PlanoSegurancaCard = () => {
+const PlanoSegurancaCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
@@ -53,15 +53,23 @@ const PlanoSegurancaCard = () => {
             <b>Status: </b>
             {editMode ? (
               <div className="input-group input-group-sm mt-2 mb-3">
-                <select className="form-select" aria-label="Default select example">
-                  <option value="0">Selecione o status</option>
-                  <option value="1">A FAZER</option>
-                  <option value="2">EM ELABORAÇÃO</option>
-                  <option value="3">CONCLUÍDA</option>
+                <select
+                  className="form-select"
+                  aria-label="Default select example"
+                  defaultValue={"DEFAULT"}
+                >
+                  <option value="DEFAULT" disabled>
+                    Selecione o status
+                  </option>
+                  <option value="A FAZER">A FAZER</option>
+                  <option value="EM ELABORAÇÃO">EM ELABORAÇÃO</option>
+                  <option value="CONCLUÍDA">CONCLUÍDA</option>
                 </select>
               </div>
             ) : (
-              <span className="text-success-emphasis fw-bold">CONCLUÍDO</span>
+              <span className="text-success-emphasis fw-bold">
+                {barragem.seguranca?.statusPSB}
+              </span>
             )}
           </div>
           <div className="card-text">
@@ -73,11 +81,11 @@ const PlanoSegurancaCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"dd/MM/aaaa"}
+                  defaultValue={barragem.seguranca?.dataEntregaPSB}
                 />
               </div>
             ) : (
-              <>dd/MM/aaaa</>
+              <>{barragem.seguranca?.dataEntregaPSB}</>
             )}
           </div>
         </section>

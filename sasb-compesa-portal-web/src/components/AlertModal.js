@@ -3,7 +3,7 @@ const AlertModal = () => {
     <div
       className="modal fade"
       id="alertModal"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="alertModalLabel"
       aria-hidden="true"
     >

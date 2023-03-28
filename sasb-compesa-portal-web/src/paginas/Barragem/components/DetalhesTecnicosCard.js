@@ -4,7 +4,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { TfiSave } from "react-icons/tfi";
 import { GlobalContext } from "../../../contexts/GlobalContext";
 
-const DetalhesTecnicosCard = () => {
+const DetalhesTecnicosCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
@@ -51,11 +51,11 @@ const DetalhesTecnicosCard = () => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
-                defaultValue={"Barragem de Concreto"}
+                defaultValue={barragem.detalhes?.material}
               />
             </div>
           ) : (
-            <>Barragem de Concreto</>
+            <>{barragem.detalhes?.material}</>
           )}
         </div>
         <section className="mb-2">
@@ -68,11 +68,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"0000.0"}
+                  defaultValue={barragem.detalhes?.capacidadeM3}
                 />
               </div>
             ) : (
-              <>0000.0 m³</>
+              <>{barragem.detalhes?.capacidadeM3} m³</>
             )}
           </div>
           <div className="card-text">
@@ -84,11 +84,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"000.0"}
+                  defaultValue={barragem.detalhes?.alturaM}
                 />
               </div>
             ) : (
-              <>000.0 m</>
+              <>{barragem.detalhes?.alturaM} m</>
             )}
           </div>
           <div className="card-text">
@@ -100,11 +100,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"0000.0"}
+                  defaultValue={barragem.detalhes?.comprimentoM}
                 />
               </div>
             ) : (
-              <>0000.0 m</>
+              <>{barragem.detalhes?.comprimentoM} m</>
             )}
           </div>
         </section>
@@ -118,11 +118,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"A Definir"}
+                  defaultValue={barragem.detalhes?.bacia}
                 />
               </div>
             ) : (
-              <>A Definir</>
+              <>{barragem.detalhes?.bacia}</>
             )}
           </div>
           <div className="card-text">
@@ -134,11 +134,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"000.0"}
+                  defaultValue={barragem.detalhes?.areaBaciaHidrograficaKm2}
                 />
               </div>
             ) : (
-              <>000.0m²</>
+              <>{barragem.detalhes?.areaBaciaHidrograficaKm2} km²</>
             )}
           </div>
           <div className="card-text">
@@ -150,11 +150,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"000.0"}
+                  defaultValue={barragem.detalhes?.areaBaciaHidraulicaM2}
                 />
               </div>
             ) : (
-              <>000.0m²</>
+              <>{barragem.detalhes?.areaBaciaHidraulicaM2} m²</>
             )}
           </div>
           <div className="card-text">
@@ -166,11 +166,11 @@ const DetalhesTecnicosCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"000.0"}
+                  defaultValue={barragem.detalhes?.areaInundadaM2}
                 />
               </div>
             ) : (
-              <>000.0m²</>
+              <>{barragem.detalhes?.areaInundadaM2} m²</>
             )}
           </div>
         </section>

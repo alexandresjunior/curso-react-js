@@ -4,7 +4,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { useContext, useState } from "react";
 import { GlobalContext } from "../../../contexts/GlobalContext";
 
-const InformacoesGeraisCard = () => {
+const InformacoesGeraisCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
 
@@ -51,11 +51,11 @@ const InformacoesGeraisCard = () => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
-                defaultValue={"Tapacurá"}
+                defaultValue={barragem.nome}
               />
             </div>
           ) : (
-            <>Tapacurá</>
+            <>{barragem.nome}</>
           )}
         </div>
 
@@ -69,11 +69,14 @@ const InformacoesGeraisCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"São Lourenço da Mata - PE"}
+                  defaultValue={`${barragem.localizacao?.municipio} - ${barragem.localizacao?.estado}`}
                 />
               </div>
             ) : (
-              <>São Lourenço da Mata - PE</>
+              <>
+                {barragem.localizacao?.municipio} -{" "}
+                {barragem.localizacao?.estado}
+              </>
             )}
           </div>
 
@@ -86,11 +89,11 @@ const InformacoesGeraisCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"1970"}
+                  defaultValue={barragem.anoConstrucao}
                 />
               </div>
             ) : (
-              <>1970</>
+              <>{barragem.anoConstrucao}</>
             )}
           </div>
         </section>
@@ -104,11 +107,11 @@ const InformacoesGeraisCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"DRI"}
+                  defaultValue={barragem.diretoria}
                 />
               </div>
             ) : (
-              <>DRI</>
+              <>{barragem.diretoria}</>
             )}
           </div>
           <div className="card-text">
@@ -120,11 +123,11 @@ const InformacoesGeraisCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"Agreste"}
+                  defaultValue={barragem.gerencia}
                 />
               </div>
             ) : (
-              <>Agreste</>
+              <>{barragem.gerencia}</>
             )}
           </div>
           <div className="card-text">
@@ -136,11 +139,11 @@ const InformacoesGeraisCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"GPR Sertão"}
+                  defaultValue={barragem.coordenacao}
                 />
               </div>
             ) : (
-              <>GPR Sertão</>
+              <>{barragem.coordenacao}</>
             )}
           </div>
           <div className="card-text">
@@ -152,11 +155,11 @@ const InformacoesGeraisCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"GPR Sertão"}
+                  defaultValue={barragem.titularidade}
                 />
               </div>
             ) : (
-              <>COMPESA</>
+              <>{barragem.titularidade}</>
             )}
           </div>
         </section>

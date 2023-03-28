@@ -5,9 +5,10 @@ import { TfiSave } from "react-icons/tfi";
 import icon from "../../../assets/pdf_download.png";
 import { GlobalContext } from "../../../contexts/GlobalContext";
 
-const InspecoesCard = () => {
+const InspecoesCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
+  const [inspecoes] = useState(barragem.inspecao?.inspecoes);
 
   return (
     <div className="card card-blue card-scrollable mb-4">
@@ -53,11 +54,11 @@ const InspecoesCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"2"}
+                  defaultValue={barragem.inspecao?.prioridade}
                 />
               </div>
             ) : (
-              <>2</>
+              <>{barragem.inspecao?.prioridade}</>
             )}
           </div>
           <div className="card-text">
@@ -69,25 +70,33 @@ const InspecoesCard = () => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={"Anual"}
+                  defaultValue={barragem.inspecao?.frequencia}
                 />
               </div>
             ) : (
-              <>Anual</>
+              <>{barragem.inspecao?.frequencia}</>
             )}
           </div>
           <div className="card-text">
             <b>Status: </b>
             {editMode ? (
               <div className="input-group input-group-sm mt-2 mb-3">
-                <select className="form-select" aria-label="Default select example">
-                  <option value="0">Selecione o status</option>
-                  <option value="1">EM DIA</option>
-                  <option value="2">PENDENTE</option>
+                <select
+                  className="form-select"
+                  aria-label="Default select example"
+                  defaultValue={"DEFAULT"}
+                >
+                  <option value="DEFAULT" disabled>
+                    Selecione o status
+                  </option>
+                  <option value="EM DIA">EM DIA</option>
+                  <option value="PENDENTE">PENDENTE</option>
                 </select>
               </div>
             ) : (
-              <span className="text-danger fw-bold">PENDENTE</span>
+              <span className="text-danger fw-bold">
+                {barragem.inspecao?.status}
+              </span>
             )}
           </div>
         </section>
@@ -203,31 +212,3 @@ const InspecoesCard = () => {
 };
 
 export default InspecoesCard;
-
-const inspecoes = [
-  {
-    nome: "1º Relatório de Inspeção Regular",
-    data: "23/03/2019",
-    link: "http://link-para-o-documento.pdf",
-  },
-  {
-    nome: "2º Relatório de Inspeção Regular",
-    data: "21/03/2020",
-    link: "http://link-para-o-documento.pdf",
-  },
-  {
-    nome: "3º Relatório de Inspeção Regular",
-    data: "19/03/2021",
-    link: "http://link-para-o-documento.pdf",
-  },
-  {
-    nome: "4º Relatório de Inspeção Regular",
-    data: "20/03/2022",
-    link: "http://link-para-o-documento.pdf",
-  },
-  {
-    nome: "5º Relatório de Inspeção Regular",
-    data: "17/03/2023",
-    link: "http://link-para-o-documento.pdf",
-  },
-];

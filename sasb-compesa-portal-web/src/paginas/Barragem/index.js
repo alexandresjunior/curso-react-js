@@ -17,10 +17,15 @@ import { FiEdit } from "react-icons/fi";
 import { TfiSave } from "react-icons/tfi";
 import { ImCancelCircle } from "react-icons/im";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { useParams } from "react-router-dom";
+import { LISTA_BARRAGENS } from "../../mocks/barragens";
 
-const Barragem = () => {
+const Barragem = ({ novo }) => {
   const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(false);
+
+  const { id } = useParams();
+  const barragem = LISTA_BARRAGENS[id - 1];
 
   return (
     <>
@@ -97,17 +102,17 @@ const Barragem = () => {
       <div className="container py-5">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-4 col-md-8 col-sm-12 col-12">
-            <InformacoesGeraisCard />
-            <DetalhesTecnicosCard />
+            <InformacoesGeraisCard barragem={barragem} />
+            <DetalhesTecnicosCard barragem={barragem} />
           </div>
 
           <div className="col-lg-4 col-md-8 col-sm-12 col-12">
-            <PlanoSegurancaCard />
-            <PlanoAcaoEmergencialCard />
+            <PlanoSegurancaCard barragem={barragem} />
+            <PlanoAcaoEmergencialCard barragem={barragem} />
           </div>
 
           <div className="col-lg-4 col-md-8 col-sm-12 col-12">
-            <InspecoesCard />
+            <InspecoesCard barragem={barragem} />
           </div>
         </div>
       </div>
