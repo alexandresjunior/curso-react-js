@@ -9,28 +9,60 @@ export const filtrarBarragensPeloNome = (barragens, busca) => {
     return barragens;
   }
 
-  const regex = new RegExp(busca, "i");
+  const buscaLowerCase = busca.toLowerCase();
+
+  const regex = new RegExp(buscaLowerCase, "i");
   return barragens.filter((barragem) => regex.test(barragem.nome));
 };
 
 export const filtrarBarragensPeloRisco = (barragens, risco) => {
-  if (!risco || risco === "Todos") {
+  const riscoLowerCase = risco.toLowerCase();
+
+  if (!riscoLowerCase || riscoLowerCase === "todos") {
     return barragens;
   }
 
-  const regex = new RegExp(risco, "i");
+  const regex = new RegExp(riscoLowerCase, "i");
   return barragens.filter((barragem) =>
     regex.test(barragem.seguranca?.classificacaoDeRisco)
   );
 };
 
 export const filtrarBarragensPeloDpa = (barragens, dpa) => {
-  if (!dpa || dpa === "Todos") {
+  const dpaLowerCase = dpa.toLowerCase();
+
+  if (!dpaLowerCase || dpaLowerCase === "todos") {
     return barragens;
   }
 
-  const regex = new RegExp(dpa, "i");
+  const regex = new RegExp(dpaLowerCase, "i");
   return barragens.filter((barragem) =>
     regex.test(barragem.seguranca?.danoPotencialAssociado)
   );
+};
+
+export const aplicarEstilo = (info) => {
+  const infoLowerCase = info.toLowerCase();
+
+  if (infoLowerCase === "em dia" || infoLowerCase === "entregue") {
+    return { color: "#078104", fontWeight: "bold" };
+  } else if (infoLowerCase === "a fazer" || infoLowerCase === "pendente") {
+    return { color: "#992020", fontWeight: "bold" };
+  } else {
+    return { color: "#979A00", fontWeight: "bold" };
+  }
+};
+
+export const retornarStatus = (info, data) => {
+  const infoLowerCase = info.toLowerCase();
+
+  if (infoLowerCase === "entregue") {
+    return (
+      <>
+        <span style={aplicarEstilo(info)}>{info}</span> no dia <b>{data}</b>
+      </>
+    );
+  } else {
+    return <span style={aplicarEstilo(info)}>{info}</span>;
+  }
 };

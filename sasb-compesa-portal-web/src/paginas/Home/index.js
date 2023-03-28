@@ -29,6 +29,8 @@ const Home = () => {
         lat: barragem.localizacao?.latitude,
         lng: barragem.localizacao?.longitude,
       });
+    } else {
+      setCoordenadas(DEFAULT_CENTER);
     }
   }, [busca, dpa, risco]);
 

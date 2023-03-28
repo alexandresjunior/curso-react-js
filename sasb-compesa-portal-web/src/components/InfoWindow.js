@@ -1,5 +1,6 @@
 import { ImCancelCircle } from "react-icons/im";
 import { Link } from "react-router-dom";
+import { retornarStatus } from "../utils";
 
 const InfoWindow = ({ barragem, showInfo, setShowInfo, infoPosition }) => {
   const handleCloseClick = () => {
@@ -36,13 +37,22 @@ const InfoWindow = ({ barragem, showInfo, setShowInfo, infoPosition }) => {
         {barragem.localizacao?.municipio}, {barragem.localizacao?.estado}
       </div>
       <div className="card-text mb-2">
-        <b>PAE: </b>Entregue no dia DD/MM/AAAA
+        <b>PAE: </b>
+        {retornarStatus(
+          barragem.seguranca?.statusPAE,
+          barragem.seguranca?.dataEntregaPAE
+        )}
       </div>
       <div className="card-text mb-2">
-        <b>PSB: </b>Entregue no dia DD/MM/AAAA
+        <b>PSB: </b>
+        {retornarStatus(
+          barragem.seguranca?.statusPSB,
+          barragem.seguranca?.dataEntregaPSB
+        )}
       </div>
       <div className="card-text mb-2">
-        <b>Inspeções: </b>EM DIA
+        <b>Inspeções: </b>
+        {retornarStatus(barragem.inspecao?.status)}
       </div>
 
       <Link

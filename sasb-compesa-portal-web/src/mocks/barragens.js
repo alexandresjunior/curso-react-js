@@ -20,8 +20,8 @@ export const LISTA_BARRAGENS = [
     seguranca: {
       statusPAE: "Em Elaboração",
       dataEntregaPAE: "-",
-      statusPSB: "Em Elaboração",
-      dataEntregaPSB: "-",
+      statusPSB: "Entregue",
+      dataEntregaPSB: "23/04/2019",
       classificacao: "A",
       nivelPerigoGlobalBarragem: "1",
       classificacaoDeRisco: "BAIXO",
@@ -103,7 +103,7 @@ export const LISTA_BARRAGENS = [
     seguranca: {
       statusPAE: "Em Elaboração",
       dataEntregaPAE: "-",
-      statusPSB: "Em Elaboração",
+      statusPSB: "A Fazer",
       dataEntregaPSB: "-",
       classificacao: "A",
       nivelPerigoGlobalBarragem: "1",
