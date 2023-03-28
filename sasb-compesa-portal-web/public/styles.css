@@ -251,6 +251,18 @@ html * {
     transition: 0.25s;
 }
 
+.link {
+    color: #223F99;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: rgba(141, 198, 63, 1);
+    transition: 0.25s;
+}
+
 .search-bar {
     cursor: pointer;
     padding-bottom: 10px;

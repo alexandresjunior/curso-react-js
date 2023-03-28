@@ -8,7 +8,7 @@ const Mapa = ({ barragens, coordenadas }) => {
   return (
     <div className="google-map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={coordenadas}
         defaultZoom={DEFAULT_ZOOM}
       >
@@ -17,7 +17,7 @@ const Mapa = ({ barragens, coordenadas }) => {
             <Marker
               lat={barragem.localizacao?.latitude}
               lng={barragem.localizacao?.longitude}
-              text={barragem.nome}
+              barragem={barragem}
               key={index}
             />
           );
