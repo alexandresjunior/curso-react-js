@@ -1,16 +1,16 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
-
-const DEFAULT_ZOOM = 8;
+import { DEFAULT_CENTER, DEFAULT_ZOOM } from "../states/mapa";
 
 const Mapa = ({ barragens, coordenadas }) => {
   return (
     <div className="google-map">
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-        defaultCenter={coordenadas}
+        defaultCenter={DEFAULT_CENTER}
         defaultZoom={DEFAULT_ZOOM}
+        center={coordenadas}
       >
         {barragens?.map((barragem, index) => {
           return (

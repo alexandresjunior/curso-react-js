@@ -3,7 +3,7 @@ import logo from "../assets/sasb_compesa_logo.png";
 import DropdownFilter from "./DropdownFilter";
 import SearchBar from "./SearchBar";
 
-const NavBar = ({ setBusca }) => {
+const NavBar = ({ setBusca, setRisco, setDpa }) => {
   return (
     <div className="container-fluid sasb-navbar">
       <div className="row py-4">
@@ -19,13 +19,17 @@ const NavBar = ({ setBusca }) => {
 
         <div className="col-lg-2 col-md-12">
           <DropdownFilter
-            options={["Filtrar por categoria de risco", "Baixo", "Médio", "Alto"]}
+            label={"Filtrar por categoria de risco"}
+            options={["Baixo", "Médio", "Alto", "Todos"]}
+            setFilter={setRisco}
           />
         </div>
 
         <div className="col-lg-2 col-md-12">
           <DropdownFilter
-            options={["Filtrar por dano potencial", "Baixo", "Médio", "Alto"]}
+            label={"Filtrar por dano potencial"}
+            options={["Baixo", "Médio", "Alto", "Todos"]}
+            setFilter={setDpa}
           />
         </div>
 
