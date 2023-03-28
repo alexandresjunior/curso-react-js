@@ -1,4 +1,4 @@
-export const barragens = [
+export const LISTA_BARRAGENS = [
   {
     id: 1,
     nome: "Bonitinho Novo",

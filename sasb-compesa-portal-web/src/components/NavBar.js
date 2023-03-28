@@ -3,7 +3,7 @@ import logo from "../assets/sasb_compesa_logo.png";
 import DropdownFilter from "./DropdownFilter";
 import SearchBar from "./SearchBar";
 
-const NavBar = () => {
+const NavBar = ({ setBusca }) => {
   return (
     <div className="container-fluid sasb-navbar">
       <div className="row py-4">
@@ -14,7 +14,7 @@ const NavBar = () => {
         </div>
 
         <div className="col-lg-3 col-md-12">
-          <SearchBar />
+          <SearchBar setBusca={setBusca} />
         </div>
 
         <div className="col-lg-2 col-md-12">
