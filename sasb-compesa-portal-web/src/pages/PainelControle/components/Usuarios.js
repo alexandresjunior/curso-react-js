@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../../../components/SearchBar";
+import { LISTA_USUARIOS } from "../../../mocks/usuarios";
 
 const Usuarios = () => {
+  const [usuarios] = useState(LISTA_USUARIOS);
+
   return (
     <div className="card card-blue card-scrollable-sm mx-5 my-4">
       <div className="card-body">
@@ -44,7 +48,7 @@ const Usuarios = () => {
                     <td className="small">{usuario.funcao}</td>
                     <td className="small">{usuario.contato}</td>
                     <td>
-                      <Link className="link" to={`/usuario/${usuario.id}`}>
+                      <Link className="link" to={`/usuario/detalhes/${usuario.id}`}>
                         Editar
                       </Link>
                     </td>
@@ -64,9 +68,12 @@ const Usuarios = () => {
         </div>
 
         <div className="d-flex justify-content-end">
-          <button className="btn btn-lg btn-sasb-blue mt-3" onClick={() => {}}>
+          <Link
+            className="btn btn-lg btn-sasb-blue mt-3"
+            to={"/usuario/cadastro"}
+          >
             NOVO USUÁRIO
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -74,60 +81,3 @@ const Usuarios = () => {
 };
 
 export default Usuarios;
-
-const usuarios = [
-  {
-    id: 1,
-    nome: "Alexandre de Souza Jr.",
-    matricula: "11339",
-    cargo: "Analista de Saneamento",
-    email: "alexandresouzajr@compesa.com.br",
-    funcao: "Administrador",
-    contato: "(81) 99999-9999",
-  },
-  {
-    id: 2,
-    nome: "Hudson Tiago Pedrosa",
-    matricula: "12345",
-    cargo: "Gerente",
-    email: "hudsontiago@compesa.com.br",
-    funcao: "Administrador",
-    contato: "(81) 99999-9999",
-  },
-  {
-    id: 3,
-    nome: "Taianne Ellis",
-    matricula: "12346",
-    cargo: "Analista de Saneamento",
-    email: "taianneellis@compesa.com.br",
-    funcao: "Colaborador",
-    contato: "(81) 99999-9999",
-  },
-  {
-    id: 4,
-    nome: "Júlio Tenório",
-    matricula: "12347",
-    cargo: "Analista de Saneamento",
-    email: "juliotenorio@compesa.com.br",
-    funcao: "Colaborador",
-    contato: "(81) 99999-9999",
-  },
-  {
-    id: 5,
-    nome: "Mayra Freire",
-    matricula: "12349",
-    cargo: "Estagiário",
-    email: "mayrafreire@compesa.com.br",
-    funcao: "Colaborador",
-    contato: "(81) 99999-9999",
-  },
-  {
-    id: 6,
-    nome: "Romik Junior",
-    matricula: "12348",
-    cargo: "Estagiário",
-    email: "romikjunior@compesa.com.br",
-    funcao: "Colaborador",
-    contato: "(81) 99999-9999",
-  },
-];

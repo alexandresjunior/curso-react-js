@@ -8,6 +8,7 @@ import RecuperarSenha from "./pages/RecuperarSenha";
 import Barragem from "./pages/Barragem";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import PainelControle from "./pages/PainelControle";
+import Usuario from "./pages/Usuario";
 
 const App = () => {
   return (
@@ -22,6 +23,11 @@ const App = () => {
           />
           <Route path="/barragem/cadastro" element={<Barragem novo={true} />} />
           <Route path="/painel-controle" element={<PainelControle />} />
+          <Route
+            path="/usuario/detalhes/:id"
+            element={<Usuario novo={false} />}
+          />
+          <Route path="/usuario/cadastro" element={<Usuario novo={true} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />
