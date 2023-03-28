@@ -14,7 +14,10 @@ const NavBar = ({ setBusca, setRisco, setDpa }) => {
         </div>
 
         <div className="col-lg-3 col-md-12">
-          <SearchBar setBusca={setBusca} />
+          <SearchBar
+            placeholder={"Digite o nome da barragem"}
+            setBusca={setBusca}
+          />
         </div>
 
         <div className="col-lg-2 col-md-12">

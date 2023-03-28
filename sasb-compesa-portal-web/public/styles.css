@@ -177,6 +177,22 @@ html * {
     max-height: 300px;
 }
 
+.scrollable-lg {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 450px;
+}
+
+.card.card-blue.card-scrollable-sm {
+    min-height: 300px;
+}
+
+.scrollable-sm {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 250px;
+}
+
 .container-full {
     height: 100vh;
 }
