@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./paginas/Home";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Login from "./paginas/Login";
-import Cadastro from "./paginas/Cadastro";
-import RecuperarSenha from "./paginas/RecuperarSenha";
-import Barragem from "./paginas/Barragem";
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import RecuperarSenha from "./pages/RecuperarSenha";
+import Barragem from "./pages/Barragem";
 import { GlobalProvider } from "./contexts/GlobalContext";
-import PainelControle from "./paginas/PainelControle";
+import PainelControle from "./pages/PainelControle";
 
 const App = () => {
   return (
