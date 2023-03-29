@@ -15,28 +15,28 @@ const ImagensCarousel = ({ barragem }) => {
     legenda: "",
   };
 
-  const [inputs, setInputs] = useState(!barragem ? [] : barragem?.imagens);
+  const [imagens, setImagens] = useState(!barragem ? [] : barragem?.imagens);
 
   const handleAddInput = () => {
-    setInputs([...inputs, novaImagem]);
+    setImagens([...imagens, novaImagem]);
   };
 
   const handleDeleteInputField = (index) => {
-    const newInputFields = [...inputs];
+    const newInputFields = [...imagens];
     newInputFields.splice(index, 1);
-    setInputs(newInputFields);
+    setImagens(newInputFields);
   };
 
   const handleLinkChange = (index, event) => {
-    const newInputFields = [...inputs];
+    const newInputFields = [...imagens];
     newInputFields[index].link = event.target.value;
-    setInputs(newInputFields);
+    setImagens(newInputFields);
   };
 
   const handleLegendaChange = (index, event) => {
-    const newInputFields = [...inputs];
+    const newInputFields = [...imagens];
     newInputFields[index].legenda = event.target.value;
-    setInputs(newInputFields);
+    setImagens(newInputFields);
   };
 
   return (
@@ -55,7 +55,7 @@ const ImagensCarousel = ({ barragem }) => {
                   <FiEdit size={20} />
                 </button>
               </div>
-              {inputs.length === 0 && (
+              {imagens.length === 0 && (
                 <div className="d-flex justify-content-center m-4">
                   <b>
                     Não há imagens para exibição. Clique no botão de Editar para
@@ -68,7 +68,7 @@ const ImagensCarousel = ({ barragem }) => {
 
           <Carousel
             target={"carrosselHomepage"}
-            images={inputs}
+            images={imagens}
             slideStyle={"fade"}
           />
         </div>
@@ -89,7 +89,7 @@ const ImagensCarousel = ({ barragem }) => {
             </button>
           </div>
 
-          {inputs?.map((imagem, index) => {
+          {imagens?.map((imagem, index) => {
             return (
               <div key={`${imagem.link}-${index}`}>
                 <b>{`Link para a imagem ${index + 1}:`}</b>

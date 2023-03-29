@@ -8,7 +8,43 @@ import { GlobalContext } from "../../../contexts/GlobalContext";
 const InspecoesCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
   const [editMode, setEditMode] = useState(!barragem);
-  const [inspecoes] = useState(barragem?.inspecao?.inspecoes);
+  const novaInspecao = {
+    nome: "",
+    data: "",
+    link: "",
+  };
+
+  const [inspecoes, setInspecoes] = useState(
+    !barragem ? [] : barragem?.inspecao?.inspecoes
+  );
+
+  const handleAddInput = () => {
+    setInspecoes([...inspecoes, novaInspecao]);
+  };
+
+  const handleDeleteInputField = (index) => {
+    const newInputFields = [...inspecoes];
+    newInputFields.splice(index, 1);
+    setInspecoes(newInputFields);
+  };
+
+  const handleNomeChange = (index, event) => {
+    const newInputFields = [...inspecoes];
+    newInputFields[index].nome = event.target.value;
+    setInspecoes(newInputFields);
+  };
+
+  const handleDataChange = (index, event) => {
+    const newInputFields = [...inspecoes];
+    newInputFields[index].data = event.target.value;
+    setInspecoes(newInputFields);
+  };
+
+  const handleLinkChange = (index, event) => {
+    const newInputFields = [...inspecoes];
+    newInputFields[index].link = event.target.value;
+    setInspecoes(newInputFields);
+  };
 
   return (
     <div className="card card-blue card-scrollable mb-4">
@@ -31,7 +67,10 @@ const InspecoesCard = ({ barragem }) => {
             </div>
           ) : (
             <div>
-              <button className="no-style-button" onClick={() => {}}>
+              <button
+                className="no-style-button"
+                onClick={() => setEditMode(false)}
+              >
                 <TfiSave className="me-1" size={20} />
               </button>
               <button
@@ -106,7 +145,10 @@ const InspecoesCard = ({ barragem }) => {
         </h5>
 
         {editMode && (
-          <button className="btn btn-sasb-blue-sm mb-3" onClick={() => {}}>
+          <button
+            className="btn btn-sasb-blue-sm mb-3"
+            onClick={handleAddInput}
+          >
             NOVA INSPEÇÃO
           </button>
         )}
@@ -114,7 +156,10 @@ const InspecoesCard = ({ barragem }) => {
         <div className="scrollable">
           {inspecoes?.map((inspecao, index) => {
             return editMode ? (
-              <div className="container border border-secondary rounded mb-3 p-2" key={index}>
+              <div
+                className="container border border-secondary rounded mb-3 p-2"
+                key={`${inspecao.link}-${index}`}
+              >
                 <small className="fw-bold">Nome:</small>
                 <div className="input-group input-group-sm mt-2 mb-2">
                   <input
@@ -123,6 +168,7 @@ const InspecoesCard = ({ barragem }) => {
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={inspecao?.nome}
+                    onChange={(event) => handleNomeChange(index, event)}
                   />
                 </div>
 
@@ -134,6 +180,7 @@ const InspecoesCard = ({ barragem }) => {
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={inspecao?.data}
+                    onChange={(event) => handleDataChange(index, event)}
                   />
                 </div>
 
@@ -145,6 +192,7 @@ const InspecoesCard = ({ barragem }) => {
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
                     defaultValue={inspecao?.link}
+                    onChange={(event) => handleLinkChange(index, event)}
                   />
                 </div>
 
@@ -153,7 +201,7 @@ const InspecoesCard = ({ barragem }) => {
                     className="btn btn-sasb-red-sm my-2"
                     data-bs-toggle="modal"
                     data-bs-target="#alertModal"
-                    onClick={() => {}}
+                    onClick={() => handleDeleteInputField(index)}
                   >
                     EXCLUIR INSPEÇÃO
                   </button>
