@@ -19,15 +19,15 @@ const App = () => {
           <Route index path="/" element={<Home />} />
           <Route
             path="/barragem/detalhes/:id"
-            element={<Barragem novo={false} />}
+            element={<Barragem />}
           />
-          <Route path="/barragem/cadastro" element={<Barragem novo={true} />} />
+          <Route path="/barragem/cadastro" element={<Barragem />} />
           <Route path="/painel-controle" element={<PainelControle />} />
           <Route
             path="/usuario/detalhes/:id"
-            element={<Usuario novo={false} />}
+            element={<Usuario />}
           />
-          <Route path="/usuario/cadastro" element={<Usuario novo={true} />} />
+          <Route path="/usuario/cadastro" element={<Usuario />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />

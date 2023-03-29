@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import logo from "../../assets/sasb_compesa_logo.png";
 import { LISTA_USUARIOS } from "../../mocks/usuarios";
 
@@ -17,6 +17,8 @@ const Usuario = () => {
   const [telefone, setTelefone] = useState("");
   const [funcao, setFuncao] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleCadastro = () => {
     if (!nome | !matricula | !email | !senha | !senhaConf | !funcao) {
@@ -161,7 +163,7 @@ const Usuario = () => {
               </label>
               <select
                 className="form-select"
-                defaultValue={usuario?.funcao}
+                defaultValue={!usuario ? "DEFAULT" : usuario?.funcao}
                 aria-label="Default select example"
                 onChange={(event) => [
                   setFuncao(event.target.value),
@@ -189,12 +191,12 @@ const Usuario = () => {
                 className="btn btn-sasb-green-dark px-5"
                 onClick={handleCadastro}
               >
-                CADASTRAR
+                SALVAR
               </button>
               <button
                 type="button"
                 className="btn btn-sasb-white-dark px-5"
-                onClick={handleCadastro}
+                onClick={() => navigate("/painel-controle")}
               >
                 CANCELAR
               </button>

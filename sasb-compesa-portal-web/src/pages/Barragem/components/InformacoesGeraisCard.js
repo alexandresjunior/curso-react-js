@@ -6,7 +6,7 @@ import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const InformacoesGeraisCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(!barragem);
 
   return (
     <div className="card card-blue mb-4">
@@ -51,11 +51,11 @@ const InformacoesGeraisCard = ({ barragem }) => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
-                defaultValue={barragem.nome}
+                defaultValue={barragem?.nome}
               />
             </div>
           ) : (
-            <>{barragem.nome}</>
+            <>{barragem?.nome}</>
           )}
         </div>
 
@@ -69,13 +69,13 @@ const InformacoesGeraisCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={`${barragem.localizacao?.municipio} - ${barragem.localizacao?.estado}`}
+                  defaultValue={`${barragem?.localizacao?.municipio} - ${barragem?.localizacao?.estado}`}
                 />
               </div>
             ) : (
               <>
-                {barragem.localizacao?.municipio} -{" "}
-                {barragem.localizacao?.estado}
+                {barragem?.localizacao?.municipio} -{" "}
+                {barragem?.localizacao?.estado}
               </>
             )}
           </div>
@@ -89,11 +89,11 @@ const InformacoesGeraisCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.anoConstrucao}
+                  defaultValue={barragem?.anoConstrucao}
                 />
               </div>
             ) : (
-              <>{barragem.anoConstrucao}</>
+              <>{barragem?.anoConstrucao}</>
             )}
           </div>
         </section>
@@ -107,11 +107,11 @@ const InformacoesGeraisCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.diretoria}
+                  defaultValue={barragem?.diretoria}
                 />
               </div>
             ) : (
-              <>{barragem.diretoria}</>
+              <>{barragem?.diretoria}</>
             )}
           </div>
           <div className="card-text">
@@ -123,11 +123,11 @@ const InformacoesGeraisCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.gerencia}
+                  defaultValue={barragem?.gerencia}
                 />
               </div>
             ) : (
-              <>{barragem.gerencia}</>
+              <>{barragem?.gerencia}</>
             )}
           </div>
           <div className="card-text">
@@ -139,11 +139,11 @@ const InformacoesGeraisCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.coordenacao}
+                  defaultValue={barragem?.coordenacao}
                 />
               </div>
             ) : (
-              <>{barragem.coordenacao}</>
+              <>{barragem?.coordenacao}</>
             )}
           </div>
           <div className="card-text">
@@ -155,11 +155,11 @@ const InformacoesGeraisCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.titularidade}
+                  defaultValue={barragem?.titularidade}
                 />
               </div>
             ) : (
-              <>{barragem.titularidade}</>
+              <>{barragem?.titularidade}</>
             )}
           </div>
         </section>

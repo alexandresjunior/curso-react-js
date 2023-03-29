@@ -6,7 +6,7 @@ import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const PlanoSegurancaCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(!barragem);
 
   return (
     <div className="card card-blue mb-4">
@@ -68,7 +68,7 @@ const PlanoSegurancaCard = ({ barragem }) => {
               </div>
             ) : (
               <span className="text-success-emphasis fw-bold">
-                {barragem.seguranca?.statusPSB}
+                {barragem?.seguranca?.statusPSB}
               </span>
             )}
           </div>
@@ -81,11 +81,11 @@ const PlanoSegurancaCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.seguranca?.dataEntregaPSB}
+                  defaultValue={barragem?.seguranca?.dataEntregaPSB}
                 />
               </div>
             ) : (
-              <>{barragem.seguranca?.dataEntregaPSB}</>
+              <>{barragem?.seguranca?.dataEntregaPSB}</>
             )}
           </div>
         </section>
@@ -99,7 +99,7 @@ const PlanoSegurancaCard = ({ barragem }) => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
-                defaultValue={"http://link-para-o-documento.pdf"}
+                defaultValue={barragem?.seguranca?.linkPSB}
               />
             </div>
           </div>

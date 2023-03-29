@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../../../components/SearchBar";
 import { aplicarEstilo } from "../../../utils";
 
 const Barragens = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="card card-blue card-scrollable-sm mx-5 my-4">
       <div className="card-body">
@@ -56,7 +58,7 @@ const Barragens = () => {
                       {barragem.inspecao}
                     </td>
                     <td>
-                      <Link className="link" to={`/barragem/${barragem.id}`}>
+                      <Link className="link" to={`/barragem/detalhes/${barragem.id}`}>
                         Editar
                       </Link>
                     </td>
@@ -76,7 +78,7 @@ const Barragens = () => {
         </div>
 
         <div className="d-flex justify-content-end">
-          <button className="btn btn-lg btn-sasb-blue mt-3" onClick={() => {}}>
+          <button className="btn btn-lg btn-sasb-blue mt-3" onClick={() => navigate("/barragem/cadastro")}>
             NOVA BARRAGEM
           </button>
         </div>

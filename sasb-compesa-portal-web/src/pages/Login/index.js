@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/sasb_compesa_logo.png";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
@@ -12,6 +14,8 @@ const Login = () => {
       setError("Preencha todos os campos");
       return;
     }
+
+    navigate("/painel-controle")
   };
 
   return (

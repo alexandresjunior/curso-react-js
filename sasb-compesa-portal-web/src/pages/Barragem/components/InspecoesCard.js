@@ -7,8 +7,8 @@ import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const InspecoesCard = ({ barragem }) => {
   const { isSignedIn } = useContext(GlobalContext);
-  const [editMode, setEditMode] = useState(false);
-  const [inspecoes] = useState(barragem.inspecao?.inspecoes);
+  const [editMode, setEditMode] = useState(!barragem);
+  const [inspecoes] = useState(barragem?.inspecao?.inspecoes);
 
   return (
     <div className="card card-blue card-scrollable mb-4">
@@ -54,11 +54,11 @@ const InspecoesCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.inspecao?.prioridade}
+                  defaultValue={barragem?.inspecao?.prioridade}
                 />
               </div>
             ) : (
-              <>{barragem.inspecao?.prioridade}</>
+              <>{barragem?.inspecao?.prioridade}</>
             )}
           </div>
           <div className="card-text">
@@ -70,11 +70,11 @@ const InspecoesCard = ({ barragem }) => {
                   className="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  defaultValue={barragem.inspecao?.frequencia}
+                  defaultValue={barragem?.inspecao?.frequencia}
                 />
               </div>
             ) : (
-              <>{barragem.inspecao?.frequencia}</>
+              <>{barragem?.inspecao?.frequencia}</>
             )}
           </div>
           <div className="card-text">
@@ -95,7 +95,7 @@ const InspecoesCard = ({ barragem }) => {
               </div>
             ) : (
               <span className="text-danger fw-bold">
-                {barragem.inspecao?.status}
+                {barragem?.inspecao?.status}
               </span>
             )}
           </div>
@@ -114,7 +114,7 @@ const InspecoesCard = ({ barragem }) => {
         <div className="scrollable">
           {inspecoes?.map((inspecao, index) => {
             return editMode ? (
-              <div className="container border border-secondary rounded mb-3 p-2">
+              <div className="container border border-secondary rounded mb-3 p-2" key={index}>
                 <small className="fw-bold">Nome:</small>
                 <div className="input-group input-group-sm mt-2 mb-2">
                   <input
@@ -122,7 +122,7 @@ const InspecoesCard = ({ barragem }) => {
                     className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
-                    defaultValue={inspecao.nome}
+                    defaultValue={inspecao?.nome}
                   />
                 </div>
 
@@ -133,7 +133,7 @@ const InspecoesCard = ({ barragem }) => {
                     className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
-                    defaultValue={inspecao.data}
+                    defaultValue={inspecao?.data}
                   />
                 </div>
 
@@ -144,7 +144,7 @@ const InspecoesCard = ({ barragem }) => {
                     className="form-control"
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
-                    defaultValue={inspecao.link}
+                    defaultValue={inspecao?.link}
                   />
                 </div>
 
@@ -162,7 +162,7 @@ const InspecoesCard = ({ barragem }) => {
             ) : (
               <div className="row mb-3" key={index}>
                 <div className="col-2">
-                  <a href={inspecao.link}>
+                  <a href={inspecao?.link}>
                     <img
                       src={icon}
                       alt="Baixar relatório de inspeção"
@@ -172,11 +172,11 @@ const InspecoesCard = ({ barragem }) => {
                 </div>
                 <div className="col-10">
                   <div className="card-text">
-                    <b>{inspecao.nome}</b>
+                    <b>{inspecao?.nome}</b>
                   </div>
                   <div className="card-text">
                     <b>Data: </b>
-                    {inspecao.data}
+                    {inspecao?.data}
                   </div>
                 </div>
               </div>

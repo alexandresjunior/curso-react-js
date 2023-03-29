@@ -20,13 +20,15 @@ export const LISTA_BARRAGENS = [
     seguranca: {
       statusPAE: "Em Elaboração",
       dataEntregaPAE: "-",
-      statusPSB: "Entregue",
-      dataEntregaPSB: "23/04/2019",
+      linkPAE: "http://link-para-o-documento.pdf",
+      statusPSB: "A Fazer",
+      dataEntregaPSB: "-",
+      linkPSB: "http://link-para-o-documento.pdf",
       classificacao: "A",
       nivelPerigoGlobalBarragem: "1",
-      classificacaoDeRisco: "BAIXO",
-      danoPotencialAssociado: "ALTO",
-      prioridade: 1,
+      classificacaoDeRisco: "ALTO",
+      danoPotencialAssociado: "BAIXO",
+      prioridade: 2,
       possuiRelatorioDeInspecaoRegular: "-",
       possuiVolume1DoPsb: "-",
     },
@@ -81,6 +83,24 @@ export const LISTA_BARRAGENS = [
       dadosInternos: "-",
       utiliza: "SIM",
     },
+    imagens: [
+      {
+        link: "https://servicos.compesa.com.br/wp-content/uploads/2017/06/Barragem-Pirapama-31.05.jpg1_.jpg",
+        legenda: "Barragem Pirapama",
+      },
+      {
+        link: "https://servicos.compesa.com.br/wp-content/uploads/2016/08/Barragem-Pau-Ferro.jpg",
+        legenda: "Barragem Pau Ferro",
+      },
+      {
+        link: "https://imagens.ne10.uol.com.br/veiculos/_midias/jpg/2022/06/21/615x300/1_dji_export_1655812342790_01-21254993.jpeg",
+        legenda: "Barragem do Prata",
+      },
+      {
+        link: "https://servicos.compesa.com.br/wp-content/uploads/2017/08/JUCAZINHO-26.07.jpg",
+        legenda: "Barragem Jucazinho",
+      },
+    ],
   },
   {
     id: 2,
@@ -103,12 +123,14 @@ export const LISTA_BARRAGENS = [
     seguranca: {
       statusPAE: "Em Elaboração",
       dataEntregaPAE: "-",
+      linkPAE: "http://link-para-o-documento.pdf",
       statusPSB: "A Fazer",
       dataEntregaPSB: "-",
+      linkPSB: "http://link-para-o-documento.pdf",
       classificacao: "A",
       nivelPerigoGlobalBarragem: "1",
-      classificacaoDeRisco: "ALTO",
-      danoPotencialAssociado: "BAIXO",
+      classificacaoDeRisco: "BAIXO",
+      danoPotencialAssociado: "ALTO",
       prioridade: 2,
       possuiRelatorioDeInspecaoRegular: "-",
       possuiVolume1DoPsb: "-",
@@ -180,5 +202,23 @@ export const LISTA_BARRAGENS = [
       dadosInternos: "-",
       utiliza: "SIM",
     },
+    imagens: [
+      {
+        link: "https://servicos.compesa.com.br/wp-content/uploads/2017/06/Barragem-Pirapama-31.05.jpg1_.jpg",
+        legenda: "Barragem Pirapama",
+      },
+      {
+        link: "https://servicos.compesa.com.br/wp-content/uploads/2016/08/Barragem-Pau-Ferro.jpg",
+        legenda: "Barragem Pau Ferro",
+      },
+      {
+        link: "https://imagens.ne10.uol.com.br/veiculos/_midias/jpg/2022/06/21/615x300/1_dji_export_1655812342790_01-21254993.jpeg",
+        legenda: "Barragem do Prata",
+      },
+      {
+        link: "https://servicos.compesa.com.br/wp-content/uploads/2017/08/JUCAZINHO-26.07.jpg",
+        legenda: "Barragem Jucazinho",
+      },
+    ],
   },
 ];
